@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediChat AI - Asistente de Primeros Auxilios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="logo.png" alt="MediChat Logo" class="logo">
+                <h1>Medi<span>Chat</span></h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                        Conversación
+                    </li>
+                    <li id="btn-detalles">
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        Detalles
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Emergencias: <strong>911 - 171</strong></p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="chat-info">
+                    <h2>Asistente de Primeros Auxilios (phi3)</h2>
+                    <span class="status-online"></span> En línea
+                </div>
+            </header>
+
+            <div class="chat-wrapper">
+                <div id="chat" class="chat-messages">
+                    <div class="message bot">
+                        <div class="avatar-placeholder">
+                            <img src="logo.png" alt="MediChat" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="message-content">
+                            <p>Hola, soy tu asistente de primeros auxilios de MediChat. Estoy capacitado para dar instrucciones básicas ante emergencias menores o estabilización.</p>
+                            <p class="warning"><strong>Importante:</strong> Si la situación representa un riesgo vital, llama inmediatamente a emergencias (911).</p>
+                            <p>¿Cómo puedo ayudarte ahora?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <footer class="chat-input-area">
+                    <div class="input-group">
+                        <input type="text" id="mensaje" placeholder="Describe los síntomas o la emergencia...">
+                        <button class="icon-btn send-btn" id="send-btn" onclick="enviar()">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal-detalles" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Detalles de MediChat AI</h2>
+            <div class="modal-body">
+                <p><strong>MediChat AI</strong> es un bot de asistencia para primeros auxilios diseñado para proporcionar instrucciones rápidas y claras en situaciones de emergencia médica menor.</p>
+                <p><strong>Modelo actual:</strong> phi3 (Ejecución local vía Ollama).</p>
+                <p><strong>Limitaciones:</strong> Este sistema no procesa imágenes directamente y no puede reemplazar el diagnóstico o la intervención de un profesional médico certificado. Ante riesgo de vida, contacte a los servicios de emergencia como el 911 (171).</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
